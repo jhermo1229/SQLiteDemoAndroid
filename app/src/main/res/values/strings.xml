@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">SQLiteDemoAndroid</string>
+    <string name="id">ID</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="course">Course</string>
+    <string name="credits">Credits</string>
+    <string name="marks">Marks</string>
+    <string name="submit">Submit</string>
+
+
 </resources>
