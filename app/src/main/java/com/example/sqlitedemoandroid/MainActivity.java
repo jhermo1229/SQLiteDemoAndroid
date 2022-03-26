@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText editId, editFirstName, editLastName, editCourse, editMarks, editCredits;
+    EditText editFirstName, editLastName, editCourse, editMarks, editCredits;
     Button submitButton;
 
     /* Database Declaration */
@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         submitButton = findViewById(R.id.submitButton);
 
         //Focusing the control to the id field
-        editId.requestFocus();
+        editFirstName.requestFocus();
 
         //Creating database
         db = openOrCreateDatabase("School", Context.MODE_PRIVATE, null);
@@ -81,13 +81,15 @@ public class MainActivity extends AppCompatActivity {
 
     private StringBuffer showRecords(Cursor cal){
         StringBuffer bfr = new StringBuffer();
+
+        cal.moveToFirst();
         bfr.append("DATA" + "\n");
-        bfr.append("Id : " + cal.getString(0));
-        bfr.append("First Name : " + cal.getString(1));
-        bfr.append("Last Name : " + cal.getString(2));
-        bfr.append("Course : " + cal.getString(3));
-        bfr.append("Marks : " + cal.getString(4));
-        bfr.append("Credits : " + cal.getString(5));
+        bfr.append("Id : " + cal.getInt(0));
+        bfr.append(" First Name : " + cal.getString(1));
+        bfr.append(" Last Name : " + cal.getString(2));
+        bfr.append(" Course : " + cal.getString(3));
+        bfr.append(" Marks : " + cal.getString(4));
+        bfr.append(" Credits : " + cal.getString(5));
 
         return bfr;
     }
